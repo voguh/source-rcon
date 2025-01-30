@@ -4,17 +4,16 @@
 name: Maven Package
 
 on:
+    workflow_dispatch:
     release:
         types: [ created ]
 
 jobs:
     build:
-
         runs-on: ubuntu-latest
         permissions:
             contents: read
             packages: write
-
         steps:
             -   uses: actions/checkout@v4
             -   name: Set up JDK 1.8
